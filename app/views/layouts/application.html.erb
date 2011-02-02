@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Giveto</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+	  <title>giveTO</title>
+	  <%= csrf_meta_tag %>
+		<%= render 'layouts/stylesheets' %>
+	</head>
+	<body>
+		<%= render 'layouts/header' %>
+		<%= yield %> 
+		<%= render 'layouts/footer' %>
+	</body>
 </html>

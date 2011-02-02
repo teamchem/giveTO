@@ -1,4 +1,6 @@
 Giveto::Application.routes.draw do
+  get "events/view"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

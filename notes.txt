@@ -1,0 +1,8 @@
+Event model:
+rails generate model Event name:string organization:integer location:string start_time:datetime end_time:datetime volunteers_needed:integer
+
+User model:
+rails generate model User first_name:string last_name:string email:string phone:string
+
+Organization model:
+rails generate model Organization name:string user:int type:string

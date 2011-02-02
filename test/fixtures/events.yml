@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  organization: 1
+  location: MyString
+  start_time: 2011-02-01 20:00:40
+  end_time: 2011-02-01 20:00:40
+  volunteers_needed: 1
+
+two:
+  name: MyString
+  organization: 1
+  location: MyString
+  start_time: 2011-02-01 20:00:40
+  end_time: 2011-02-01 20:00:40
+  volunteers_needed: 1
