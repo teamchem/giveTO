@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
-  def view
-    @title = "Events"
+  def show
+    @event = Event.find(params[:id])
   end
 
+  def create
+  end
 end

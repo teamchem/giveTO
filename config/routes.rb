@@ -1,6 +1,20 @@
 Giveto::Application.routes.draw do
-  get "events/view"
 
+  get "users/show"
+
+  get "users/create"
+
+  match '/contact', :to => "pages#contact"
+  match '/about', :to => "pages#about"
+  match '/help', :to => 'pages#help'
+  match '/home', :to => 'pages#home'
+  
+  match '/sign-up', :to => 'users#create'
+  
+  match "/events/show/:id", :to => "events#show"
+  match 'events/new', :to => "events#create"
+  
+  root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
