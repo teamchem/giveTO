@@ -3,6 +3,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def create
+  def new
   end
 end

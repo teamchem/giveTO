@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
   end
 
-  def create
+  def new
   end
 
 end

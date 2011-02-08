@@ -1,9 +1,4 @@
 Giveto::Application.routes.draw do
-
-  get "users/show"
-
-  get "users/create"
-
   match '/contact', :to => "pages#contact"
   match '/about', :to => "pages#about"
   match '/help', :to => 'pages#help'
