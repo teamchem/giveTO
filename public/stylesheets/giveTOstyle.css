@@ -8,6 +8,10 @@ body {
     font-weight: bold;
 }
 
+.clear {
+	clear: both;
+}
+
 a:active {
     border: none;
     text-decoration: none;    
@@ -30,7 +34,7 @@ a:visited {
 }
 
 #menu {
-    padding-left: 137px;   
+    float: right;
 
 }
 
@@ -75,6 +79,7 @@ h2 {
 }
 
 #signIn {
+		float: right;
     text-align: left;    
     font-size: 10pt;
 }
@@ -147,7 +152,7 @@ form p{
 }*/
 
 /*span#buttonFind {
-    background-image: url('images/bigButtons1.png');
+    background-image: url('../images/bigButtons1.png');
     background-repeat: no-repeat;
     height: 250px;
     width: 98px;    
