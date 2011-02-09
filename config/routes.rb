@@ -1,9 +1,11 @@
 Giveto::Application.routes.draw do
+  resources :users
+  
   match '/contact', :to => "pages#contact"
   match '/about', :to => "pages#about"
   match '/help', :to => 'pages#help'
   
-  match '/sign-up', :to => 'users#new'
+  match '/sign-up', :to => 'users#create'
   
   match "/events/show/:id", :to => "events#show"
   match 'events/new', :to => "events#new"

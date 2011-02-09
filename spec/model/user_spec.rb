@@ -3,7 +3,8 @@ require 'spec_helper'
 describe User do
   before(:each) do
     @attr = { 
-      :name => "Example User", 
+      :first_name => "Example", 
+      :last_name => "User",
       :email => "user@example.com", 
       :password => "foobar",
       :password_confirmation => "foobar"
@@ -30,8 +31,8 @@ describe User do
   end
   
   it "should reject names that are too long" do
-    long_name = "a" * 51;
-    long_name_user = User.new(@attr.merge(:name => long_name))
+    long_name = "a" * 51
+    long_name_user = User.new(@attr.merge(:first_name => long_name, :last_name => long_name))
     long_name_user.should_not be_valid
   end
   
@@ -91,7 +92,7 @@ describe User do
     end
     
     it "should set the encrypted password" do
-      @user.encryped_password.should_not be_blank
+      @user.encrypted_password.should_not be_blank
     end
     
     describe "has_password? method" do
@@ -100,7 +101,7 @@ describe User do
       end
       
       it "should be false if the passwords don't match" do
-        @user.has_password?("invalid").should_be false
+        @user.has_password?("invalid").should be_false
       end
     end
   end

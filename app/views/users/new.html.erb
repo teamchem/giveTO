@@ -1,8 +1,37 @@
 <div id="content">
     <p id="intro">
-        giveTo is free, fun and easy. Sign up now to give back to your commnity.
+        giveTo is free, fun and easy. Sign up now to give back to your community.
     </p>
-    <div id="mainForm">
+		
+		<%= form_for(@user) do |f| %>
+		<p>
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name, :size => 30 %>
+		</p>
+		<p>
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name, :size => 30 %>
+		</p>
+		<p>
+			<%= f.label :email %>
+			<%= f.text_field :email, :size => 30 %>
+		</p>
+		<p>
+			<%= f.label :phone %>
+			<%= f.text_field :phone, :size => 30 %>
+		</p>
+		<p>
+			<%= f.label :password %>
+			<%= f.text_field :password, :size => 30 %>
+		</p>
+		<p>
+			<%= f.label :password_confirmation %>
+			<%= f.text_field :password_confirmation	, :size => 30 %>
+		</p>
+		<%= image_submit_tag "../images/submitButtonBlueBig.png" %>
+		<% end %>
+
+   <!-- <div id="mainForm">
         <form method="post" action="" name="fullSignInForm" id="fullForm">
         <p><label for="fullName">full name: </label> <input type="text" name="fname" id="fullName" size="30" /></p>
         <p><label for="nEmail">email: </label><input type="text" name="newEmail" id="nEmail" size="30" /></p>
@@ -12,7 +41,7 @@
         <p><label for="zip">zipcode: </label><input type="text" name="newZip" id="zip" size="30" /></p>
             <input class="submitButton" id="submitBig" type="submit" value="Sign me up!" />
         </form>
-    </div>
+    </div>-->
 <!--                <div id="featured">
         
 <!-\-                    <table id="featuredTable">
