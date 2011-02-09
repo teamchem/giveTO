@@ -6,7 +6,7 @@ Giveto::Application.routes.draw do
   match '/sign-up', :to => 'users#new'
   
   match "/events/show/:id", :to => "events#show"
-  match 'events/new', :to => "events#create"
+  match 'events/new', :to => "events#new"
   
   root :to => 'pages#home'
   # The priority is based upon order of creation:
