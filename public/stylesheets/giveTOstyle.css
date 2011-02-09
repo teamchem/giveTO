@@ -230,3 +230,9 @@ form p{
 #logo {
     height: 100px;
 }
+
+.flash {
+	width: 820px;
+	background: #E6E6E6;
+	margin: auto;
+}
