@@ -2,21 +2,37 @@
 <div id="headerContent">
 	<div id="signIn">
       <form action="post" name="signInForm">
-      <h2>Sign in</h2>
-      <table>
-          <tr><td><input type="text" name="existingEmail" size="20" /></td><td><input type="password" name="existingPw" size="16" /></td><td><input class="submitButton" type="submit" value="sign in" /></td></tr>
-          <tr><td>email</td><td>password</td><td></td></tr>
-      </table>
-      
+      	<h2>Sign in</h2>
+	      <table>
+	          <tr>
+							<td>
+								<input type="text" name="existingEmail" size="20" />
+							</td>
+							<td>
+								<input type="password" name="existingPw" size="16" />
+							</td>
+							<td>
+								<input class="submitButton" type="submit" value="sign in" />
+							</td>
+						</tr>
+	          <tr>
+							<td>email</td>
+							<td>password</td>
+							<td></td>
+						</tr>
+	      </table>
       </form>
   </div>
-    <a style="float:left;" href="/"><%= image_tag "logo.png", :id => 'logo', :alt => 'giveTo logo' %></a>
-<div class="clear"></div>
-    <span id="menu">
-			<span id="menuNew">What's New</span>
-			<span id="menuSched">Schedule</span>
-			<span id="menuOrg">Orgnizations</span>
-			<span id="menuAbout">About</span>
-		</span>
-		<div class="clear"></div>
+   <a style="float:left;" href="/">
+		<!-- <%= image_tag "logo.png", :id => 'logo', :alt => 'giveTo logo' %> -->
+		<img src="../images/logo.png" alt="giveTo" />
+	</a>
+	<div class="clear"></div>
+   <span id="menu">
+		<span id="menuNew">What's New</span>
+		<span id="menuSched">Schedule</span>
+		<span id="menuOrg">Orgnizations</span>
+		<span id="menuAbout">About</span>
+	</span>
+	<div class="clear"></div>
 </div>
