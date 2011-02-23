@@ -5,4 +5,8 @@ class EventsController < ApplicationController
 
   def new
   end
+  
+  def calendar
+    
+  end
 end

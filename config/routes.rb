@@ -12,7 +12,8 @@ Giveto::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   
   match "/events/show/:id", :to => "events#show"
-  match 'events/new', :to => "events#new"
+  match '/events/new', :to => "events#new"
+  match '/events/calendar', :to => "events#calendar"
   
   root :to => 'pages#home'
   # The priority is based upon order of creation:
