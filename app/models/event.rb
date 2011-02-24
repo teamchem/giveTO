@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110202040623
+# Schema version: 20110224000659
 #
 # Table name: events
 #
@@ -12,6 +12,7 @@
 #  volunteers_needed :integer
 #  created_at        :datetime
 #  updated_at        :datetime
+#  rso_type          :string(255)
 #
 
 class Event < ActiveRecord::Base
