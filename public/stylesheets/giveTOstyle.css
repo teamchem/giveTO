@@ -237,3 +237,92 @@ form div{
 	background: #E6E6E6;
 	margin: auto;
 }
+
+/*--- 2nd addition ---*/
+.aboutUs {
+	font-size: 18px;
+	width: 70%;
+	margin: auto;
+	text-align: justify;
+	font-weight: normal;
+}
+
+p a#inlineText {
+	color: #3D6CC1;
+	text-decoration: none;
+}
+
+p a#inlineText:hover {
+	text-decoration: underline;
+}
+
+h3 {
+	text-align: left;
+	margin: 0px;
+}
+
+.headerBar {
+	background-image: url('images/gradient.png');
+	background-repeat: repeat-x;
+	padding: 5px;
+}
+
+.tiles {
+	width: 300px;
+	padding: 5px;
+	margin: 10px;
+	font-size: 18px;
+	text-align: left;
+	font-weight: normal;
+	float: left;
+}
+
+.insideDiv {
+	width: 675px;
+	margin: 20px auto 20px auto;
+	height: 100%;
+	border-top: none;
+	height: 400px;
+}
+
+span.smallButton {
+	background-image: url('images/smallerButton.png');
+	background-repeat: no-repeat;
+	padding: 5px 30px 10px 15px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+}
+
+span#smallerButton {
+	background-image: url('images/skinnyButton.png');
+	background-repeat: no-repeat;
+	
+}
+
+table.eventDisplay  {
+    padding-top: 50px; 
+    text-align: left; 
+	clear: both;
+	width: 500px;
+}
+
+table.eventDisplay {
+    font-size: 12pt; 
+    font-weight: normal;
+		
+}
+
+table.eventDisplay td {
+    padding: 5px 5px 0px 0px;  
+	vertical-align: top;
+}
+
+table#allOppTable {
+	width: 100%;
+}
+
+table#allOppTable tr:hover {
+	background-color: white;
+	cursor: pointer;
+}

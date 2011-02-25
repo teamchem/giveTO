@@ -9,4 +9,8 @@ class EventsController < ApplicationController
   def calendar
     
   end
+  
+  def all
+    
+  end
 end

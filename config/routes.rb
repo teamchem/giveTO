@@ -14,6 +14,7 @@ Giveto::Application.routes.draw do
   match "/events/show/:id", :to => "events#show"
   match '/events/new', :to => "events#new"
   match '/events/calendar', :to => "events#calendar"
+  match '/events/all', :to => "events#all"
   
   root :to => 'pages#home'
   # The priority is based upon order of creation:

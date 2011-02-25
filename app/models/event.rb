@@ -16,5 +16,5 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :name, :location, :start_time, :end_time
+  attr_accessible :name, :location, :start_time, :end_time, :rso_type
 end
