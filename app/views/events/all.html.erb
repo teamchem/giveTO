@@ -4,29 +4,13 @@
 		<tr>
 			<th>Date</th><th>Name</th><th>Host</th><th>Category</th>
 		</tr>
-		<tr>
-			<td>March 28, 2011</td><td>Planting a tree</td><td>Circle K Club</td><td>Special Interest</td>
-		</tr>
-		<tr>
-			<td></td><td>Soup Kitchen Duty</td><td>U District Food Bank</td><td>Political/Social Action</td>
-		</tr>
-		<tr>
-			<td>March 29, 2011</td><td>All Campus Clean Up</td><td>Panhellenic and IFC</td><td>Fraternities and Sororities</td>
-		</tr>
-		<tr>
-			<td>March 31, 2011</td><td>Clean the Ave</td><td>Campus Girl Scouts</td><td>Recreation</td>
-		</tr>
-		<tr>
-			<td>April 1, 2011</td><td>Planting a tree</td><td>Circle K Club</td><td>Academic</td>
-		</tr>
-		<tr>
-			<td></td><td>Soup Kitchen Duty</td><td>U District Food Bank</td><td>Health Sciences</td>
-		</tr>
-		<tr>
-			<td>April 2, 2011</td><td>All Campus Clean Up</td><td>Panhellenic and IFC</td><td>Sports</td>
-		</tr>
-		<tr>
-			<td>April 3, 2011</td><td>Clean the Ave</td><td>Campus Girl Scouts</td><td>Recreation</td>
-		</tr>
+		<%= @events.each do |event| %>
+			<tr>
+				<td><%= event.strftime("%m/%d/%Y") %></td>
+				<td><%= event.name %></td>
+				<td><%= event.organization %></td>
+				<td><%= event.rso_type %></td>
+			</tr>
+		<% end %>
 	</table>	
 </div>

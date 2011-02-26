@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110224000659
+# Schema version: 20110226034153
 #
 # Table name: events
 #
@@ -13,8 +13,9 @@
 #  created_at        :datetime
 #  updated_at        :datetime
 #  rso_type          :string(255)
+#  description       :string(255)
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :name, :location, :start_time, :end_time, :rso_type
+  attr_accessible :name, :organization, :location, :start_time, :end_time, :end_time, :volunteers_needed, :rso_type, :description
 end

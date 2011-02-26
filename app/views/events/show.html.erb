@@ -1,26 +1,25 @@
 <div class="insideDiv">
-	<h3 class="headerBar">Plant a tree day</h3>
+	<h3 class="headerBar"><%= @event.name %></h3>
 	<table class="eventDisplay">
 		<colgroup width="20%"></colgroup>
 		<colgroup></colgroup>
 		<tr>
-			<td>Hosted by:</td><td>Nature Consortium</td>
+			<td>Hosted by:</td><td><%= @event.organization %></td>
 		</tr>
 		<tr>
-			<td>When:</td><td>March 18, 2011</td>
+			<td>When:</td><td><%= @event.start_time.strftime("%m/%d/%Y") %></td>
 		</tr>
 		<tr>
-			<td>Where:</td><td>Carriage Crest Elementary School<br />1425 Se 140th St</br />Kent, WA 98058</td>
+			<td>Where:</td><td><%= @event.location %></td>
 		</tr>
 		<tr>
-			<td>Description:</td><td>We will be planting trees for christmas 10 years from now.
-				(Category: Special Interest)</td>
+			<td>Description:</td><td><%= @event.description %></td>
 		</tr>
 		<tr>
 			<td colspan="2"><span id="smallerButton" class="smallButton">Add to My Events</span>
 		</tr>
 		<tr>
-			<td colspan="2">for more information contact Nature Consortium at gogreen@natureconsortium.com</td>
+			<td colspan="2">for more information contact <%= @event.organization %> at gogreen@natureconsortium.com</td> <!-- field for email? -->
 		</tr>
 	</table>
 </div>
