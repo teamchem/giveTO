@@ -5,16 +5,8 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
     @title = "New event"
-  end
-  
-  def calendar
-    
-  end
-  
-  def all
-    @title = "All events"
-    @events = Event.all
   end
   
   def create
@@ -24,8 +16,17 @@ class EventsController < ApplicationController
       flash[:success] = "Event created!"
       redirect_to @event
     else
-      @title = "Sign up"
+      @title = "New event"
       render 'new'
     end
+  end
+  
+  def calendar
+    
+  end
+  
+  def all
+    @title = "All events"
+    @events = Event.all(:order => 'start_time')
   end
 end

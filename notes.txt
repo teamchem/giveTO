@@ -7,4 +7,61 @@ rails generate model User first_name:string last_name:string email:string phone:
 Organization model:
 rails generate model Organization name:string user:int type:string
 
-Event.new(:name => "Story Time", :organization => "Happy Hands", :location => "123 Sesame Street", :start_time => DateTime.now, :end_time => DateTime.now + 5.hours, :volunteers_needed => 5, :rso_type => "Business", :description => "Let's read some books!")
+Event.create(:name => "Story Time", :organization => "Happy Hands", :location => "123 Sesame Street", :start_time => DateTime.now, :end_time => DateTime.now + 5.hours, :volunteers_needed => 5, :rso_type => "Business", :description => "Let's read some books!")
+
+Event.create(:name => "Cleanup Time", :organization => "Happy Hands", :location => "123 Sesame Street", :start_time => DateTime.now - 1.week, :end_time => DateTime.now - 1.week + 5.hours, :volunteers_needed => 5, :rso_type => "Business", :description => "Let's read some books!")
+
+unfinished:
+/contact - empty
+/help - empty
+/signup - CSS
+/signin - CSS
+/event/show/:id - CSS
+/events/new - syntax error
+/events/calendar - not implemented
+/events/all - displays weird db text
+
+finished:
+/about
+/signout
+
+<!--
+	<form method="post" action="" name="fullSignInForm" id="fullForm">
+		<h2>Register Volunteer Opportunity</h2>
+		<div><label for="fullName">full name: </label> <input type="text" name="fname" id="fullName" size="30" /></div>
+		<div><label for="nEmail">email: </label><input type="text" name="newEmail" id="nEmail" size="30" /></div>
+    <div><label for="org">affiliated organization (if any): </label><input type="text" name="newOrg" id="org" size="30" /></div>
+    <h2>Information About Volunteer Opportunity</h2>
+    <div><label for="title">title: </label><input type="text" name="newTitle" id="title" size="30" /></div>
+    <div><label for="date">date: </label><input type="text" name="newDate" id="date" size="30" /></div>
+    <div><label for="start1">start time: </label><input type="text" name="newStart" id="start1" size="3" /> : <input type="text" name="newStart" id="start2" size="4" />
+        <input type="radio" name="startAmpm" value="am" /> AM <input type="radio" name="startAmpm" value="pm" />PM</div>
+    <div><label for="end1">end time: </label><input type="text" name="newEnd" id="end1" size="3" /> : <input type="text" name="newEnd" id="end2" size="4" />
+        <input type="radio" name="endAmpm" value="am" /> AM <input type="radio" name="endAmpm" value="pm" />PM</div>
+    <div><label for="desc">description: </label><textarea name="newDesc" id="desc" rows="5" cols="23" ></textarea></div>
+    <div><label for="amount">amount of helpers needed: </label><input type="text" name="newAmount" id="amount" size="30" /></div>
+    <div><br />Select category most similar to opportunity:</div>
+<select name="dropCategories">
+<option value="Academic" /> Academic </option>
+<option value="Business" /> Business </option>
+        <option value="Cultural" /> Cultural/International</option>
+        <option value="Engineering" /> Engineering </option>
+        <option value="Fraternities" /> Fraternities &amp; Sororities (any type) </option>
+        <option value="Health" /> Health Sciences </option>
+<option value="Honorary" /> Honorary </option>
+<option value="Law" /> Law </option>
+<option value="LivingGroups" /> Living Groups </option>
+<option value="Medical" /> Medical/Dental/Nursing </option>
+        <option value="Performing" /> Performing </option>
+        <option value="Political" /> Political/Social Action </option>
+        <option value="Recreation" /> Recreation </option>
+        <option value="Religious" /> Religious/Spiritual </option>
+        <option value="Sciences" /> Sciences </option>
+        <option value="Special" /> Special Interest </option>
+        <option value="Sports" /> Sports </option>
+        
+</select> Other: <input type="text" name="otherCat" id="textOtherCat" size="15" />
+    
+<br />
+    <input class="submitButton" id="submitBig" type="submit" value="Sign me up!" />
+    </form>-->

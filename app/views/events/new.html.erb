@@ -1,72 +1,33 @@
 <p id="intro">
-    giveTo is free, fun and easy. Sign up now to give back to your commnity.
+    giveTo is free, fun and easy. Sign up now to give back to your community.
 </p>
 <div id="mainForm">
 	<% form_for(@event) do |f| %>
 		<h2>Register Volunteer Opportunity</h2>
-		<p>
-			<%= f.label :user_name %>
-			<%= f.text_field :name, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :user_email %>
-			<%= f.text_field :, :size => 30 %>
-		</p>
-		<p>
+		<div>
+			<%= #f.label :name %>
+			<%= #f.text_field :name, :size => 30 %>
+		</div>
+		<div>
+			<%= # f.label :user_email %>
+			<%= # f.text_field :user_email, :size => 30 %>
+		</div>
+		<div>
 			<%= f.label :organization %>
-			<%= f.text_field organization:, :size => 30 %>
-		</p>
+			<%= f.text_field :organization, :size => 30 %>
+		</div>
 		<h2>Information About Volunteer Opportunity</h2>
-		<p>
+		<div>
 			<%= f.label :name %>
-			<%= f.text_field name:, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :organization %>
-			<%= f.text_field organization:, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :organization %>
-			<%= f.text_field organization:, :size => 30 %>
-		</p>
-	<% end%>
-	<form method="post" action="" name="fullSignInForm" id="fullForm">
-		<h2>Register Volunteer Opportunity</h2>
-		<p><label for="fullName">full name: </label> <input type="text" name="fname" id="fullName" size="30" /></p>
-		<p><label for="nEmail">email: </label><input type="text" name="newEmail" id="nEmail" size="30" /></p>
-    <p><label for="org">affiliated organization (if any): </label><input type="text" name="newOrg" id="org" size="30" /></p>
-    <h2>Information About Volunteer Opportunity</h2>
-    <p><label for="title">title: </label><input type="text" name="newTitle" id="title" size="30" /></p>
-    <p><label for="date">date: </label><input type="text" name="newDate" id="date" size="30" /></p>
-    <p><label for="start1">start time: </label><input type="text" name="newStart" id="start1" size="3" /> : <input type="text" name="newStart" id="start2" size="4" />
-        <input type="radio" name="startAmpm" value="am" /> AM <input type="radio" name="startAmpm" value="pm" />PM</p>
-    <p><label for="end1">end time: </label><input type="text" name="newEnd" id="end1" size="3" /> : <input type="text" name="newEnd" id="end2" size="4" />
-        <input type="radio" name="endAmpm" value="am" /> AM <input type="radio" name="endAmpm" value="pm" />PM</p>
-    <p><label for="desc">description: </label><textarea name="newDesc" id="desc" rows="5" cols="23" ></textarea></p>
-    <p><label for="amount">amount of helpers needed: </label><input type="text" name="newAmount" id="amount" size="30" /></p>
-    <p><br />Select category most similar to opportunity:</p>
-<select name="dropCategories">
-<option value="Academic" /> Academic </option>
-<option value="Business" /> Business </option>
-        <option value="Cultural" /> Cultural/International</option>
-        <option value="Engineering" /> Engineering </option>
-        <option value="Fraternities" /> Fraternities &amp; Sororities (any type) </option>
-        <option value="Health" /> Health Sciences </option>
-<option value="Honorary" /> Honorary </option>
-<option value="Law" /> Law </option>
-<option value="LivingGroups" /> Living Groups </option>
-<option value="Medical" /> Medical/Dental/Nursing </option>
-        <option value="Performing" /> Performing </option>
-        <option value="Political" /> Political/Social Action </option>
-        <option value="Recreation" /> Recreation </option>
-        <option value="Religious" /> Religious/Spiritual </option>
-        <option value="Sciences" /> Sciences </option>
-        <option value="Special" /> Special Interest </option>
-        <option value="Sports" /> Sports </option>
-        
-</select> Other: <input type="text" name="otherCat" id="textOtherCat" size="15" />
-    
-<br />
-    <input class="submitButton" id="submitBig" type="submit" value="Sign me up!" />
-    </form>
+			<%= f.text_field :name, :size => 30 %>
+		</div>
+		<div>
+			<%= f.label :location %>
+			<%= f.text_field :location, :size => 30 %>
+		</div>
+		<div>
+			<%= f.label :description %>
+			<%= f.text_field :description, :size => 30 %>
+		</div>
+	<% end %>
 </div>
