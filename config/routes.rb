@@ -15,7 +15,7 @@ Giveto::Application.routes.draw do
   
   match "/events/show/:id", :to => "events#show"
   match '/events/new', :to => "events#create"
-  match '/events/calendar', :to => "events#calendar"
+  match '/events/calendar/:date', :to => "events#calendar"
   match '/events/all', :to => "events#all"
   
   root :to => 'pages#home'

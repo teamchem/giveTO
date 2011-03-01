@@ -1,1 +1,83 @@
-<h1>Calendar</h1>
+<h1>Volunteer Events for <%= "#{@date.month} #{@date.year}" %></h1>
+<table cellspacing="0">
+	<thead>
+		<tr>
+			<th>Sun</th>
+			<th>Mon</th><th>Tue</th><th>Wed</th>
+			<th>Thu</th><th>Fri</th><th>Sat</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		<%
+		# what day of hte week it is 0-6
+		running_day = @date.wday
+		days_in_month = days_in_month(@date.month,@date.year)  
+		days_in_this_week = 1
+		%>
+		
+		<% for x in 0..(running_day-1) do %>
+			<td class="padding" colspan="1"></td>
+		<% days_in_this_week+=1 %>
+		<% end %>
+		
+		<% for list_day in 1..days_in_month do %>
+		<td id="<%= e.rso_type %>"><%= list_day %>
+			<div class="events">
+				<ul>
+			<% events.each do |e| %>
+				<% if e.start_time == @date %>
+					<li>
+						<span class="title"><%= e.name %></span>
+						<span class="desc"><%= e.address %></span>
+					</li>				
+				<% end %>
+			<% end %>
+				</ul>
+			</div>
+		</td>
+		<%
+			list_day+=1;
+			days_in_this_week+=1;
+			running_day+=1;
+			%>
+			<% if(days_in_this_week) >= 7 %>
+				<% days_in_this_week = 0 %>
+				</tr>
+				<tr>
+			<% end %>
+
+			<% if(running_day == 6 && list_day != days_in_month) %>
+				</tr> 
+				<tr>
+				<% 
+					running_day = -1 
+					days_in_this_week = 0
+				%>
+			<% end %>
+		<% end %>
+		
+		<% if(days_in_this_week < 8) %>
+			<% for x in 1..8 - days_in_this_week do	%>
+				<td class="padding" colspan="1"></td>
+			<% end %>
+		<% end %>
+
+		</tr>
+		</tbody>
+		<tfoot>
+			<th><a href="/calendar/"<%= @minus1year.strftime('%m%Y') %>> << </a>
+			<th><a href="/calendar/"<%= @minus1month.strftime('%m%Y') %>> < </a>
+			<th><a href="/calendar/"<%= @plus1month.strftime('%m%Y') %>> > </a>
+			<th><a href="/calendar/"<%= @plus1year.strftime('%m%Y') %>> >> </a>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tfoot>
+</table>
+
+<input type="checkbox" name="rso1"   /><label for="RSO1">RSO1</label>
+<input type="checkbox" name="rso2"   /><label for="RSO1">RSO2</label>
+<input type="checkbox" name="rso3"   /><label for="RSO1">RSO3</label>
+<input type="checkbox" name="rso4"   /><label for="RSO1">RSO4</label>
