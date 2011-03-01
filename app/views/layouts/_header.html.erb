@@ -1,5 +1,6 @@
 <!--<div id="headerCurve"></div>-->
 <div id="headerContent">
+	<div id="headerGuts">
 	<div id="signIn">
 
 <!--
@@ -27,14 +28,11 @@
 
   </div>
 	<a style="float:left;" href="/">
-		<%= image_tag "logo2.png", :id => 'logo', :alt => 'giveTo logo' %>
+		<%= image_tag "giveTOlogoWhite.png", :id => 'logo', :alt => 'giveTo logo' %>
 	</a>
-	<div class="clear"></div>
+	<!--<div class="clear"></div>-->
    <span id="menu">
-		<span id="menuNew">What's New</span>
 		<span id="menuSched">Schedule</span>
-		<span id="menuOrg">Organizations</span>
-		<span id="menuAbout">About</span>
 		<% if signed_in? %>
 			<%= link_to "Profile", current_user %>
 			<%=	link_to "Sign out", signout_path, :method => :delete %>
@@ -43,5 +41,6 @@
 		<% end %>
 	</span>
 	<div class="clear"></div>
+</div>
 </div>
 <div id="content">

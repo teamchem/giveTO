@@ -6,3 +6,9 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+Event.create(:name => 'Story Time', 
+			 :organization => 'Happy Hands', :location => '123 Sesame Street', 
+			:start_time => DateTime.now, :end_time => DateTime.now + 5.hours, :volunteers_needed => 5, 
+			:rso_type => 'Business', :description => "Let's read some books!")
+			
+s

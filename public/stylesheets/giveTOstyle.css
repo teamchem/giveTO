@@ -1,11 +1,10 @@
 body {
-    background-color: #333333;
-    background-image: url('../images/smallOval.png');
-    background-repeat: repeat;    
+	background-color: #E8EFFA;    
     color: #333333;
-    font-family: "Calibri", "century gothic", serif;
+    font-family: "century gothic", serif;
     font-size: 14pt;
-    font-weight: bold;
+	margin: 0px;
+	padding: 0px;
 }
 
 .clear {
@@ -23,51 +22,43 @@ a:visited {
 }
 
 #headerContent {
-    width: 800px;
-    margin: auto;
-		margin-top: 15px;
-    text-align: center; /*for ie*/    
-    background-color: white;  
-    padding: 5px 10px 0px 10px;
+    background-image: url("../images/topBannerPlain.png");
+    background-repeat: no-repeat;
+	background-position: center;
+	background-color: #1B1464;
+    text-align: center; /*for ie*/ 
     text-align: left;
-    /*border-bottom: 2px dashed #666666;*/
+	padding: 0px;
+	margin: 0px;
+	height: 133px;
+	border-bottom: 1px solid #ADE0F2;
+    /*border-bottom: 2px dashed #666666;
 		-webkit-border-top-right-radius: 15px;
 		-webkit-border-top-left-radius: 15px;
 		-moz-border-radius-topright: 15px;
 		-moz-border-radius-topleft: 15px;
 		border-top-right-radius: 15px;
-		border-top-left-radius: 15px;
+		border-top-left-radius: 15px;*/
+}
+
+#headerGuts {
+	width: 830px;
+	margin: auto;
+	height: 133px;
+	text-align: center; /*for ie*/
 }
 
 #menu {
 	float: right;
+	vertical-align: bottom;
 }
 
 #menu span {
-    background-image: url('../images/menuGray.png');
-    background-repeat: no-repeat;
-    color: white;
-    font-size: 12pt; 
-    text-align: center; 
-    vertical-align: text-top;
+    color: black;
+    font-size: 14pt;  
     cursor: pointer;    
 }
 
-#menu span#menuNew{
-    padding: 10px 8px 10px 8px;
-}
-
-#menu span#menuSched{
-    padding: 10px 18px 10px 20px;
-}
-
-#menu span#menuOrg{
-    padding: 10px 5px 10px 8px;
-}
-
-#menu span#menuAbout{
-    padding: 10px 28px 10px 30px;
-}
 
 
 h2 {
@@ -84,7 +75,7 @@ h2 {
 }
 
 #signIn {
-		float: right;
+	float: right;
     text-align: left;    
     font-size: 10pt;
 }
@@ -165,19 +156,28 @@ form div{
 }
 */
 #content {
-    width: 820px;
-    margin: auto;
-    text-align: center; /*for ie*/    
-    background-color: #E6E6E6;
-    opacity: .9;
-    padding: 5px;
-    height: auto;
-   /* border-left: 5px solid #666666;
-    border-right: 5px solid #666666;*/
+    background-image: url("../images/blueGrad.png");
+    background-repeat: repeat-x;
+	background-position: center top;
+    background-color: white;
+    padding: 0px;
+	margin: 0px;
+	min-height: 350px;
+}
+
+#contentGuts {
+	width: 850px;
+	background-image: url("../images/contentBackground.png");
+	background-repeat: repeat-y;
+    margin: 0px auto 0px auto;
+    text-align: center; /*for ie*/
+    padding: 0px;
+	min-height: 350px;
 }
 
 #content p#intro {
-    padding: 5px 200px 5px 200px;    
+    padding: 5px 190px 0px 190px; 
+	margin: 0px;    
 
 }
 
@@ -197,17 +197,28 @@ form div{
 }
 
 #footer {
-    background: #666666 ;
-    width: 820px;
-    background-repeat: no-repeat;
+    background-color: #E8EFFA;
+    color: #666666;
+	font-size: 10pt;
+	text-align: center;
+	font-weight: normal;
     margin: auto;
-    padding: 0px;
-		-webkit-border-bottom-right-radius: 15px;
+    padding: 5px 0px 0px 0px;
+	border-top: 1px solid #ADE0F2;
+/* 		-webkit-border-bottom-right-radius: 15px;
 		-webkit-border-bottom-left-radius: 15px;
 		-moz-border-radius-bottomright: 15px;
 		-moz-border-radius-bottomleft: 15px;
 		border-bottom-right-radius: 15px;
-		border-bottom-left-radius: 15px;    
+		border-bottom-left-radius: 15px;   */  
+}
+
+#footer a {
+	color: #666666;
+}
+
+#footer a:hover {
+	text-decoration: underline;
 }
 
 #footerCurve {
@@ -228,9 +239,6 @@ form div{
     padding: 0px;  
 }
 
-#logo {
-    height: 100px;
-}
 
 .flash {
 	width: 820px;
@@ -262,7 +270,7 @@ h3 {
 }
 
 .headerBar {
-	background-image: url('images/gradient.png');
+	background-image: url('../images/gradient.png');
 	background-repeat: repeat-x;
 	padding: 5px;
 }
@@ -286,7 +294,7 @@ h3 {
 }
 
 span.smallButton {
-	background-image: url('images/smallerButton.png');
+	background-image: url('../images/smallerButton.png');
 	background-repeat: no-repeat;
 	padding: 5px 30px 10px 15px;
 	font-weight: bold;
@@ -295,7 +303,7 @@ span.smallButton {
 }
 
 span#smallerButton {
-	background-image: url('images/skinnyButton.png');
+	background-image: url('../images/skinnyButton.png');
 	background-repeat: no-repeat;
 	
 }
