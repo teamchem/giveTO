@@ -20,6 +20,6 @@ class Event < ActiveRecord::Base
   attr_accessible :name, :organization, :location, :start_time, :end_time, :end_time, :volunteers_needed, :rso_type, :description
 
   def month
-    return start_date.month
+    return start_time.month
   end
 end
