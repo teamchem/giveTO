@@ -9,7 +9,7 @@ rails generate model Organization name:string user:int type:string
 
 Event.create(:name => "Story Time", :organization => "Happy Hands", :location => "123 Sesame Street", :start_time => DateTime.now, :end_time => DateTime.now + 5.hours, :volunteers_needed => 5, :rso_type => "Business", :description => "Let's read some books!")
 
-Event.create(:name => "Cleanup Time", :organization => "Happy Hands", :location => "123 Sesame Street", :start_time => DateTime.now - 1.week, :end_time => DateTime.now - 1.week + 5.hours, :volunteers_needed => 5, :rso_type => "Business", :description => "Let's read some books!")
+Event.create(:name => "Cleanup Time", :organization => "Happy Hands", :location => "123 Sesame Street", :start_time => DateTime.now - 1.week, :end_time => DateTime.now - 1.week + 5.hours, :volunteers_needed => 5, :rso_type => "Business", :description => "Your room is messy!")
 
 unfinished:
 /contact - empty
