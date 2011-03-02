@@ -11,4 +11,3 @@ Event.create(:name => 'Story Time',
 			:start_time => DateTime.now, :end_time => DateTime.now + 5.hours, :volunteers_needed => 5, 
 			:rso_type => 'Business', :description => "Let's read some books!")
 			
-s

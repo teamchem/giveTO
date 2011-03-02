@@ -13,7 +13,7 @@
 		<%
 		# what day of hte week it is 0-6
 		running_day = @date.wday
-		days_in_month = days_in_month(@date.month,@date.year)  
+		days_in_months = days_in_month(@date.month,@date.year)		
 		days_in_this_week = 1
 		%>
 		
@@ -22,11 +22,12 @@
 		<% days_in_this_week+=1 %>
 		<% end %>
 		
-		<% for list_day in 1..days_in_month do %>
-		<td id="<%= e.rso_type %>"><%= list_day %>
+		
+		<% for list_day in 1..days_in_months do %>
+			<td><%= list_day %>
 			<div class="events">
 				<ul>
-			<% events.each do |e| %>
+			<% @events.each do |e| %>
 				<% if e.start_time == @date %>
 					<li>
 						<span class="title"><%= e.name %></span>
@@ -48,7 +49,7 @@
 				<tr>
 			<% end %>
 
-			<% if(running_day == 6 && list_day != days_in_month) %>
+			<% if(running_day == 6 && list_day != days_in_months) %>
 				</tr> 
 				<tr>
 				<% 
@@ -67,10 +68,10 @@
 		</tr>
 		</tbody>
 		<tfoot>
-			<th><a href="/calendar/"<%= @minus1year.strftime('%m%Y') %>> << </a>
-			<th><a href="/calendar/"<%= @minus1month.strftime('%m%Y') %>> < </a>
-			<th><a href="/calendar/"<%= @plus1month.strftime('%m%Y') %>> > </a>
-			<th><a href="/calendar/"<%= @plus1year.strftime('%m%Y') %>> >> </a>
+			<th><a href="/calendar/"<%= @minus1year.strftime('%m%Y') %>"> << </a>
+			<th><a href="/calendar/"<%= @minus1month.strftime('%m%Y') %>"> < </a>
+			<th><a href="/calendar/"<%= @plus1month.strftime('%m%Y') %>"> > </a>
+			<th><a href="/calendar/"<%= @plus1year.strftime('%m%Y') %>"> >> </a>
 		<th></th>
 		<th></th>
 		<th></th>
