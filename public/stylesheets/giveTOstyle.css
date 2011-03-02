@@ -11,14 +11,29 @@ body {
 	clear: both;
 }
 
+.centerIt {
+	text-align: center;
+}
+
 a:active {
     border: none;
-    text-decoration: none;    
+    text-decoration: none; 
+	color: #1B1464;
 }
 
 a:visited {
     border: none;
-    text-decoration: none;    
+    text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	margin: 0px;
+	padding: 25px;
 }
 
 #headerContent {
@@ -59,8 +74,6 @@ a:visited {
     cursor: pointer;    
 }
 
-
-
 h2 {
     color: #3D6CC1;    
     font-size: 14pt;
@@ -96,12 +109,11 @@ label {
 
 table {
     font-family: inherit;
-    border-collapse: collapse;
-    font-size: 9pt;    
+    border-collapse: collapse;  
 }
 
 table td {
-    padding: 0px;    
+    padding: 0px 10px 0px 10px;    
 
 }
 
@@ -196,6 +208,26 @@ form div{
     padding: 10px;    
 }
 
+#signUpForm {
+	width: 450px;
+	margin: auto;
+	padding-bottom: 5em;
+	text-align: right;
+}
+
+#signUpTable td{
+	margin: 0px;
+	padding: 5px;
+}
+
+/* .textInputBox {
+text-align: left;
+}
+
+.label {
+	text-align: right;
+} */
+
 #footer {
     background-color: #E8EFFA;
     color: #666666;
@@ -220,25 +252,6 @@ form div{
 #footer a:hover {
 	text-decoration: underline;
 }
-
-#footerCurve {
-	background-image: url('../images/bottomCurve.png'); 
-	background-repeat: no-repeat;
-	height: 20px;
-	width: 820px;
-	margin: auto;
-	padding: 0px;
-}
-
-#headerCurve {
-    background-image: url('../images/topCurve.png');
-    width: 820px;
-    height: 10px;
-    background-repeat: no-repeat;
-    margin: auto;
-    padding: 0px;  
-}
-
 
 .flash {
 	width: 820px;

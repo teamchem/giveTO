@@ -1,36 +1,41 @@
     <p id="intro">
-        giveTo is free, fun and easy. Sign up now to give back to your community.
+        <br />giveTo is free, fun and easy. Sign up now to give back to your community.<br /><br />
     </p>
+	<div id="signUpForm">
 		
 		<%= form_for(@user) do |f| %>
 		 <%= render 'shared/error_messages' %>
-		<p>
-			<%= f.label :first_name %>
-			<%= f.text_field :first_name, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :last_name %>
-			<%= f.text_field :last_name, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :email %>
-			<%= f.text_field :email, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :phone %>
-			<%= f.text_field :phone, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :password %>
-			<%= f.password_field :password, :size => 30 %>
-		</p>
-		<p>
-			<%= f.label :password_confirmation %>
-			<%= f.password_field :password_confirmation	, :size => 30 %>
-		</p>
-		<%= image_submit_tag "../images/submitButtonBlueBig.png" %>
+		<table class="signUpTable">
+		<tr>
+			<td class="label"><%= f.label :first_name %></td>
+			<td class="textInputBox"><%= f.text_field :first_name, :size => 30 %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= f.label :last_name %></td>
+			<td class="textInputBox"><%= f.text_field :last_name, :size => 30 %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= f.label :email %></td>
+			<td class="textInputBox"><%= f.text_field :email, :size => 30 %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= f.label :phone %></td>
+			<td class="textInputBox"><%= f.text_field :phone, :size => 30 %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= f.label :password %></td>
+			<td class="textInputBox"><%= f.password_field :password, :size => 30 %></td>
+		</tr>
+		<tr>
+			<td class="label"><%= f.label :password_confirmation %></td>
+			<td class="textInputBox"><%= f.password_field :password_confirmation	, :size => 30 %></td>
+		</tr>
+		<tr>
+			<td class="centerIt" colspan="2"><%= image_submit_tag "../images/submitButtonBlueBig.png" %></td>
+		</tr>
 		<% end %>
-
+		</table>
+	</div>
    <!-- <div id="mainForm">
         <form method="post" action="" name="fullSignInForm" id="fullForm">
         <p><label for="fullName">full name: </label> <input type="text" name="fname" id="fullName" size="30" /></p>
@@ -41,19 +46,4 @@
         <p><label for="zip">zipcode: </label><input type="text" name="newZip" id="zip" size="30" /></p>
             <input class="submitButton" id="submitBig" type="submit" value="Sign me up!" />
         </form>
-    </div>-->
-<!--                <div id="featured">
-        
-<!-\-                    <table id="featuredTable">
-            <tr><td><h2>Featured Organization</h2></td><td></td></tr>
-            <tr>
-                <td><img src="http://beetlebabee.files.wordpress.com/2010/03/girl_scouts.jpg" alt="girl scouts" height="200px" /></td>
-                <td>
-                    <p><strong>Who</strong>: Campus Girls Scouts</p>
-                    <p><strong>Recent Work</strong>: It is that time of the year, Cookie Sales!!! Buy your box today</p>
-                    <p><strong>Fun Fact</strong>: Their three keys to leadership include Discover, Connect and Take Action. Now that's inspiring!</p>
-                    <p><strong>Current Volunteer Opportunities</strong> They are always looking for help selling cookies in front of the University Bookstore.</p>
-                </td>
-            </tr>
-        </table>-\->
     </div>-->
