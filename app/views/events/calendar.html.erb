@@ -68,10 +68,10 @@
 		</tr>
 		</tbody>
 		<tfoot>
-			<th><a href="/calendar/"<%= @minus1year.strftime('%m%Y') %>"> << </a>
-			<th><a href="/calendar/"<%= @minus1month.strftime('%m%Y') %>"> < </a>
-			<th><a href="/calendar/"<%= @plus1month.strftime('%m%Y') %>"> > </a>
-			<th><a href="/calendar/"<%= @plus1year.strftime('%m%Y') %>"> >> </a>
+			<th><a href="/events/calendar/<%= "#{@minus1year.strftime('%m%Y')}" %>"> << </a>
+			<th><a href="/events/calendar/<%= "#{@minus1month.strftime('%m%Y')}" %>"> < </a>
+			<th><a href="/events/calendar/<%= "#{@plus1month.strftime('%m%Y')}" %>"> > </a>
+			<th><a href="/events/calendar/<%= "#{@plus1year.strftime('%m%Y')}" %>"> >> </a>
 		<th></th>
 		<th></th>
 		<th></th>
