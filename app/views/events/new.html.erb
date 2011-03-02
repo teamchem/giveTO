@@ -1,22 +1,22 @@
 <p id="intro">
-    giveTo is free, fun and easy. Sign up now to give back to your community.
+   <!-- giveTo is free, fun and easy. Sign up now to give back to your community.-->
 </p>
 <div id="mainForm">
 	<% form_for(@event) do |f| %>
 		<h2>Register Volunteer Opportunity</h2>
 		<div>
-			<%= #f.label :name %>
-			<%= #f.text_field :name, :size => 30 %>
+			<% #f.label :name %>
+			<% #f.text_field :name, :size => 30 %>
 		</div>
 		<div>
-			<%= # f.label :user_email %>
-			<%= # f.text_field :user_email, :size => 30 %>
+			<% # f.label :user_email %>
+			<% # f.text_field :user_email, :size => 30 %>
 		</div>
 		<div>
 			<%= f.label :organization %>
 			<%= f.text_field :organization, :size => 30 %>
 		</div>
-		<h2>Information About Volunteer Opportunity</h2>
+		<!--<h2>Information About Volunteer Opportunity</h2>-->
 		<div>
 			<%= f.label :name %>
 			<%= f.text_field :name, :size => 30 %>
@@ -26,8 +26,39 @@
 			<%= f.text_field :location, :size => 30 %>
 		</div>
 		<div>
+			<%= f.label :start_time %>
+			<%= f.datetime_select :start_time, :size => 30 %>
+		</div>
+		<div>
+			<%= f.label :end_time %>
+			<%= f.datetime_select :end_time, :size => 30 %>
+		</div>
+		<div>
 			<%= f.label :description %>
-			<%= f.text_field :description, :size => 30 %>
+			<%= f.text_area :description, :size => '30x10' %>
+		</div>
+		<div>
+			<%= f.label :rso_type %>
+			<%= f.select :rso_type,[["Academic", "Academic"],
+															["Business", "Business"],
+					                    ["Cultural/International", "Cultural"],
+					                    ["Engineering", "Engineering"],
+					                    ["Fraternities & Sororities", "Fraternities"],
+					                    ["Health Sciences", "Health"],
+															["Honorary", "Honorary"],
+															["Law", "Law"],
+															["Living Groups", "LivingGroups"],
+															["Medical/Dental/Nursing", "Medical"],
+					                    ["Performing", "Performing"],
+					                    ["Political/Social Action", "Political"],
+					                    ["Recreation", "Recreation"],
+					                    ["Religious/Spiritual", "Religious"],
+					                    ["Sciences", "Sciences"],
+					                    ["Special Interest", "Special"],
+					                    ["Sports", "Sports"]] %>
+		</div>
+		<div>
+			<%= image_submit_tag "../images/submitButtonBlueBig.png" %>
 		</div>
 	<% end %>
 </div>

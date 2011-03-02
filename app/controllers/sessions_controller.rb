@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
     @title = "Sign in"
+    Time.zone = 'Pacific Time (US & Canada)'
   end
 
   def create
