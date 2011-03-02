@@ -32,8 +32,8 @@ class EventsController < ApplicationController
 
     @events = Event.find(:all, :order => 'start_time', 
                          :conditions => ['start_time >= ? AND end_time <= ?', 
-                                               DateTime.now.beginning_of_month,
-                                               DateTime.now.end_of_month] )
+                                               @date.beginning_of_month,
+                                               @date.end_of_month] )
                                                
    common_year_days_in_month = [nil, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
    def days_in_month(month, year = Time.now.year)
