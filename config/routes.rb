@@ -13,12 +13,14 @@ Giveto::Application.routes.draw do
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
   
-  match "/events/show/:id", :to => "events#show"
-  match '/events/new', :to => "events#new"
-  match '/events/calendar/:date', :to => "events#calendar"
-  match '/events/all', :to => "events#all"
+  match '/events/show/:id', :to => 'events#show'
+  match '/events/new', :to => 'events#new'
+  match '/events/calendar', :to => 'error#pass_calendar_date'
+  match '/events/calendar/:date', :to => 'events#calendar'
+  match '/events/all', :to => 'events#all'
   
   root :to => 'pages#home'
   
+  # Catch-all 404 redirect
   match '*a', :to => 'error#routing'
 end
