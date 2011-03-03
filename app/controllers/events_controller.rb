@@ -23,7 +23,6 @@ class EventsController < ApplicationController
   
   def calendar
     @title  = "Calendar"
-    #date_string = "022011"
     @date_string = params[:date]
     @date   = DateTime.strptime(str = @date_string, fmt = '%m%Y')
     @minus1year  = @date - 1.year
