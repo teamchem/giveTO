@@ -106,7 +106,7 @@ input, textarea {
 label {
     vertical-align: top;    
 }
-
+/*
 table {
     font-family: inherit;
     border-collapse: collapse;  
@@ -116,7 +116,7 @@ table td {
     padding: 0px 10px 0px 10px;    
 
 }
-
+*/
 .submitButton {
     background-image: url('../images/submitButtonBlue.png'); 
     background-repeat: no-repeat;    
