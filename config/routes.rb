@@ -14,7 +14,7 @@ Giveto::Application.routes.draw do
   match '/signout', :to => 'sessions#destroy'
   
   match "/events/show/:id", :to => "events#show"
-  match '/events/new', :to => "events#create"
+  match '/events/new', :to => "events#new"
   match '/events/calendar/:date', :to => "events#calendar"
   match '/events/all', :to => "events#all"
   

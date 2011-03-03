@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   end
 
   def new
+    @event = Event.new
     @title = "New event"
   end
   
@@ -14,7 +15,7 @@ class EventsController < ApplicationController
     
     if @event.save
       flash[:success] = "Event created!"
-      redirect_to @event
+      redirect_to "/events/show/#{@event.id}"
     else
       @title = "New event"
       render 'new'
