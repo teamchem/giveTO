@@ -1,11 +1,17 @@
-table {
+#eventsCal * {
+	/* old-style reset here :) */
+	border: 0px;
+	padding: 0px;
+}
+
+#eventsCal {
 	border-collapse: separate;
 	border: 1px solid #9DABCE;
 	border-width: 0px 0px 1px 1px;
 	margin: 10px auto;
 	font-size: 20px;
 }
-td, th {
+#eventsCal td, th {
 	width: 81px;
 	height: 81px;
 	text-align: center;
@@ -14,39 +20,39 @@ td, th {
 	color: #444;
 	position: relative;
 }
-th {
+#eventsCal th {
 	height: 30px;
 	font-weight: bold;
 	font-size: 14px;
 }
-td:hover, th:hover {
+#eventsCal td:hover, th:hover {
 	background-position: 0px -81px;
 	color: #222;
 }
-td.date_has_event {
+#eventsCal td.date_has_event {
 	background-position: 162px 0px;
 	color: white;
 }
-td.date_has_event:hover {
+#eventsCal td.date_has_event:hover {
 	background-position: 162px -81px;
 }
-td.padding {
+#eventsCal td.padding {
 	background: url(../images/calendar/calpad.jpg);
 }
-td.padding_empty{
+#eventsCal td.padding_empty{
 
 }
-td.today {
+#eventsCal td.today {
 	background-position: 81px 0px;
 	color: white;
 }
-td.today:hover {
+#eventsCal td.today:hover {
 	background-position: 81px -81px;
 }
-.events {
+#eventsCal .events {
 	position: relative;
 }
-.events ul {
+#eventsCal .events ul {
 	text-align: left;
 	position: absolute;
 	display: none;
@@ -65,20 +71,20 @@ td.today:hover {
 	color: #444444;
 	-webkit-box-shadow: 0px 8px 8px #333;
 }
-.events li {
+#eventsCal .events li {
 	padding-bottom: 5px;
 }
-.events li span {
+#eventsCal .events li span {
 	display: block;
 	font-size: 12px;
 	text-align: justify;
 	color: #555;
 }
-.events li span.title {
+#eventsCal .events li span.title {
 	font-weight: bold;
 	color: #222;
 }
-a {
+#eventsCal a {
 	color: black;
 	text-decoration: none;
 }

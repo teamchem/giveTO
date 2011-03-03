@@ -1,5 +1,5 @@
 <h1>Volunteer Events for <%= "#{@date.month} #{@date.year}" %></h1>
-<table cellspacing="0">
+<table cellspacing="0" id="eventsCal">
 	<thead>
 		<tr>
 			<th>Sun</th>
@@ -14,7 +14,7 @@
 		# what day of hte week it is 0-6
 		running_day = @date.wday
 		days_in_months = days_in_month(@date.month,@date.year)		
-		days_in_this_week = 1
+		days_in_this_week = 0
 		%>
 		
 		<% for x in 0..(running_day-1) do %>
@@ -38,11 +38,7 @@
 				</ul>
 			</div>
 		</td>
-		<%
-			list_day+=1;
-			days_in_this_week+=1;
-			running_day+=1;
-			%>
+		
 			<% if(days_in_this_week) >= 7 %>
 				<% days_in_this_week = 0 %>
 				</tr>
@@ -57,7 +53,12 @@
 					days_in_this_week = 0
 				%>
 			<% end %>
-		<% end %>
+			<%
+			list_day+=1;
+			days_in_this_week+=1;
+			running_day+=1;
+		%>
+	<% end %>
 		
 		<% if(days_in_this_week < 8) %>
 			<% for x in 1..8 - days_in_this_week do	%>
@@ -70,11 +71,12 @@
 		<tfoot>
 			<th><a href="/events/calendar/<%= "#{@minus1year.strftime('%m%Y')}" %>"> << </a>
 			<th><a href="/events/calendar/<%= "#{@minus1month.strftime('%m%Y')}" %>"> < </a>
+			<th></th>
+			<th></th>
+			<th></th>
 			<th><a href="/events/calendar/<%= "#{@plus1month.strftime('%m%Y')}" %>"> > </a>
 			<th><a href="/events/calendar/<%= "#{@plus1year.strftime('%m%Y')}" %>"> >> </a>
-		<th></th>
-		<th></th>
-		<th></th>
+
 	</tfoot>
 </table>
 
