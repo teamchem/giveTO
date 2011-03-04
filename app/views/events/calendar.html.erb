@@ -1,4 +1,4 @@
-<h1>Volunteer Events for <%= "#{@date.month} #{@date.year}" %></h1>
+<h1>Volunteer Events for <%= "#{@date.strftime('%B')} #{@date.year}" %></h1>
 <table cellspacing="0" id="eventsCal">
 	<thead>
 		<tr>
@@ -22,16 +22,21 @@
 		<% days_in_this_week+=1 %>
 		<% end %>
 		
-		
 		<% for list_day in 1..days_in_months do %>
+			<% 
+			list_day_string = list_day.to_s()
+			current_date_string = @date_string + list_day_string 
+			current_date = Date.strptime(str = current_date_string, fmt = '%m%Y%d') 
+			%>
 			<td><%= list_day %>
 			<div class="events">
 				<ul>
 			<% @events.each do |e| %>
-				<% if e.start_time == @date %>
-					<li>
+				<% event_date = e.start_time.to_date %>
+				<% if event_date == current_date %>
+					<li class="<%=e.rso_type %>">
 						<span class="title"><%= e.name %></span>
-						<span class="desc"><%= e.address %></span>
+						<span class="desc"><%= e.location %></span>
 					</li>				
 				<% end %>
 			<% end %>
@@ -80,7 +85,7 @@
 	</tfoot>
 </table>
 
-<input type="checkbox" name="rso1"   /><label for="RSO1">RSO1</label>
+<input type="checkbox" name="Business"   /><label for="Business">Business</label>
 <input type="checkbox" name="rso2"   /><label for="RSO1">RSO2</label>
 <input type="checkbox" name="rso3"   /><label for="RSO1">RSO3</label>
 <input type="checkbox" name="rso4"   /><label for="RSO1">RSO4</label>
