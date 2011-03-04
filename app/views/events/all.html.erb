@@ -1,15 +1,17 @@
 <div class="insideDiv">
-	<h3 class="headerBar">All Available Opportunities:</h3>
+	<h3 class="headerBar">All Available Opportunities: </h3>
+	<span style="float: right;" id="display_nav">List | <a href="/events/calendar">Calendar</a></span>
 	<table class="eventDisplay" id="allOppTable">
 		<tr>
-			<th>Date</th><th>Name</th><th>Host</th><th>Category</th>
+			<th>Date</th><th>Name</th><th>Host</th><th>Category</th><th>Volunteers needed</th>
 		</tr>
 		<% @events.each do |event| %>
 			<tr>
 				<td><%= event.start_time.strftime("%m/%d/%Y") %></td>
-				<td><%= event.name %></td>
+				<td><a href="/events/show/<%= event.id %>"><%= event.name %></a></td>
 				<td><%= event.organization %></td>
 				<td><%= event.rso_type %></td>
+				<td><%= event.volunteers_needed %></td>
 			</tr>
 		<% end %>
 	</table>	

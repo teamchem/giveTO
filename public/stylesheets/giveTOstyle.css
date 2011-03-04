@@ -126,10 +126,14 @@ label {
 
 form div{
     font-weight: normal;
-    text-align: right; 
+    text-align: left; 
     width: 450px; 
-    margin: 2px auto 4px 50px;
+    margin: auto;
     font-size: 12pt;    
+}
+
+#session_submit {
+
 }
 
 #content {
@@ -191,7 +195,7 @@ form div{
 	font-size: 10pt;
 	text-align: center;
 	font-weight: normal;
-	margin: auto;
+	margin: 0px auto 0px auto;
 	padding: 5px 0px 0px 0px;
 	border-top: 1px solid #ADE0F2; 
 }
@@ -212,7 +216,7 @@ form div{
 
 /*--- 2nd addition ---*/
 .aboutUs {
-	font-size: 18px;
+	font-size: 16px;
 	width: 70%;
 	margin: auto;
 	text-align: justify;
