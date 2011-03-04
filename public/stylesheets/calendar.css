@@ -89,13 +89,14 @@
 	text-decoration: none;
 }
 #cal_buttons_left{
-	float:right;
+	float:left;
 	width:250px;
 }
 #cal_buttons_right{
-	float:left;
+	float:right;
 	width:250px;
 }
 .button_wrapper {
 	width:500px;
+
 }

@@ -190,14 +190,13 @@ form div{
 }
 
 #footer {
+	margin: 0px auto 0px auto;
+	padding: 5px 0px 0px 0px;
 	background-color: #E8EFFA;
 	color: #666666;
-	
 	font-size: 10pt;
 	text-align: center;
 	font-weight: normal;
-	margin: 0px auto 0px auto;
-	padding: 5px 0px 0px 0px;
 	border-top: 1px solid #ADE0F2; 
 }
 
