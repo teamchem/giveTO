@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
+    @title = @event.name
     #@organization = User.find(params[@user.id])
   end
 
@@ -14,7 +15,7 @@ class EventsController < ApplicationController
     
     if @event.save
       flash[:success] = "Event created!"
-      redirect_to @event
+      redirect_to "/events/show/#{@event.id}"
     else
       @title = "New event"
       render 'new'

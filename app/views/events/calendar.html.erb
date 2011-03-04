@@ -1,5 +1,11 @@
-<h1>Volunteer Events for <%= "#{@date.month} #{@date.year}" %></h1>
-<table cellspacing="0">
+<h1>Volunteer Events for <%= "#{@date.strftime('%B')} #{@date.year}" %></h1>
+<span style="float: right; padding-top: 5px; padding-bottom: 5px; margin-right: 50px" id="display_nav"><a href="/events/all">List</a> | Calendar</span>
+<div class="clear"></div>
+<a class="fancy_button" href="/events/new" style="float: right; margin-right: 30px;">
+  <span style="background-color: #0071bc;">Create an event</span>
+</a>
+<div class="clear"></div>
+<table cellspacing="0" id="eventsCal">
 	<thead>
 		<tr>
 			<th>Sun</th>
@@ -14,7 +20,7 @@
 		# what day of hte week it is 0-6
 		running_day = @date.wday
 		days_in_months = days_in_month(@date.month,@date.year)		
-		days_in_this_week = 1
+		days_in_this_week = 0
 		%>
 		
 		<% for x in 0..(running_day-1) do %>
@@ -22,27 +28,28 @@
 		<% days_in_this_week+=1 %>
 		<% end %>
 		
-		
 		<% for list_day in 1..days_in_months do %>
+			<% 
+			list_day_string = list_day.to_s()
+			current_date_string = @date_string + list_day_string 
+			current_date = Date.strptime(str = current_date_string, fmt = '%m%Y%d') 
+			%>
 			<td><%= list_day %>
 			<div class="events">
 				<ul>
 			<% @events.each do |e| %>
-				<% if e.start_time == @date %>
-					<li>
+				<% event_date = e.start_time.to_date %>
+				<% if event_date == current_date %>
+					<li class="<%=e.rso_type %>">
 						<span class="title"><%= e.name %></span>
-						<span class="desc"><%= e.address %></span>
+						<span class="desc"><%= e.location %></span>
 					</li>				
 				<% end %>
 			<% end %>
 				</ul>
 			</div>
 		</td>
-		<%
-			list_day+=1;
-			days_in_this_week+=1;
-			running_day+=1;
-			%>
+		
 			<% if(days_in_this_week) >= 7 %>
 				<% days_in_this_week = 0 %>
 				</tr>
@@ -57,7 +64,12 @@
 					days_in_this_week = 0
 				%>
 			<% end %>
-		<% end %>
+			<%
+			list_day+=1;
+			days_in_this_week+=1;
+			running_day+=1;
+		%>
+	<% end %>
 		
 		<% if(days_in_this_week < 8) %>
 			<% for x in 1..8 - days_in_this_week do	%>
@@ -70,15 +82,39 @@
 		<tfoot>
 			<th><a href="/events/calendar/<%= "#{@minus1year.strftime('%m%Y')}" %>"> << </a>
 			<th><a href="/events/calendar/<%= "#{@minus1month.strftime('%m%Y')}" %>"> < </a>
+			<th></th>
+			<th></th>
+			<th></th>
 			<th><a href="/events/calendar/<%= "#{@plus1month.strftime('%m%Y')}" %>"> > </a>
 			<th><a href="/events/calendar/<%= "#{@plus1year.strftime('%m%Y')}" %>"> >> </a>
-		<th></th>
-		<th></th>
-		<th></th>
+
 	</tfoot>
 </table>
 
-<input type="checkbox" name="rso1"   /><label for="RSO1">RSO1</label>
-<input type="checkbox" name="rso2"   /><label for="RSO1">RSO2</label>
-<input type="checkbox" name="rso3"   /><label for="RSO1">RSO3</label>
-<input type="checkbox" name="rso4"   /><label for="RSO1">RSO4</label>
+<form id="filter_form">
+	<div class="button_wrapper">
+		<div id="cal_buttons_left">
+			<input type="checkbox" name="Academic"   /><label for="Academic"> Academic</label><br/>
+			<input type="checkbox" name="Cultural_International"   /><label for="Cultural_International"> Cultural/International</label><br/>
+			<input type="checkbox" name="Fraternities_Sororities"   /><label for="Fraternities_Sororities"> Fraternities & Sororities</label><br/>		
+			<input type="checkbox" name="Honorary"   /><label for="Honorary"> Honorary</label><br/>
+			<input type="checkbox" name="Living_Groups"   /><label for="Living_Groups"> LivingGroups</label><br />
+			<input type="checkbox" name="Performing"   /><label for="Performing"> Performing</label><br />
+			<input type="checkbox" name="Recreation"   /><label for="Recreation"> Recreation</label><br/>
+			<input type="checkbox" name="Sciences"   /><label for="Sciences"> Sciences</label><br/>
+			<input type="checkbox" name="Sports"   /><label for="Sports"> Sports</label>
+		</div>
+		<div id="cal_buttons_right">
+			<input type="checkbox" name="Business"   /><label for="Business"> Business</label><br/>
+			<input type="checkbox" name="Engineering"   /><label for="Engineering"> Engineering</label><br/>
+			<input type="checkbox" name="Health_Sciences"   /><label for="Health_Sciences"> Health Sciences</label><br/>
+			<input type="checkbox" name="Law"   /><label for="Law"> Law</label><br/>
+			<input type="checkbox" name="Medical_Dental_Nursing"   /><label for="Medical_Dental_Nursing"> Medical/Dental/Nursing</label><br/>			
+			<input type="checkbox" name="Political_Social_Action"   /><label for="Political_Social_Action"> Political/Social/Action</label><br/>
+			<input type="checkbox" name="Religious_Spiritual"   /><label for="Religious_Spiritual"> Religious/Spiritual</label><br/>
+			<input type="checkbox" name="Special_Interest"   /><label for="Special_Interest"> Special/Interest</label><br/>
+			
+		</div>
+	</div>
+	<div class="clear"></div>
+</form>

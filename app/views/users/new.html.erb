@@ -4,31 +4,31 @@
 	<div id="signUpForm">
 		
 		<%= form_for(@user) do |f| %>
-		 <%= render 'shared/error_messages' %>
+		 <% # render 'shared/error_messages' %>
 		<table class="signUpTable">
 		<tr>
-			<td class="label"><%= f.label :first_name %></td>
-			<td class="textInputBox"><%= f.text_field :first_name, :size => 30 %></td>
+			<td><%= f.label :first_name %></td>
+			<td><%= f.text_field :first_name, :size => 30 %></td>
 		</tr>
 		<tr>
-			<td class="label"><%= f.label :last_name %></td>
-			<td class="textInputBox"><%= f.text_field :last_name, :size => 30 %></td>
+			<td><%= f.label :last_name %></td>
+			<td><%= f.text_field :last_name, :size => 30 %></td>
 		</tr>
 		<tr>
-			<td class="label"><%= f.label :email %></td>
-			<td class="textInputBox"><%= f.text_field :email, :size => 30 %></td>
+			<td><%= f.label :email %></td>
+			<td><%= f.text_field :email, :size => 30 %></td>
 		</tr>
 		<tr>
-			<td class="label"><%= f.label :phone %></td>
-			<td class="textInputBox"><%= f.text_field :phone, :size => 30 %></td>
+			<td><%= f.label :phone %></td>
+			<td><%= f.text_field :phone, :size => 30 %></td>
 		</tr>
 		<tr>
-			<td class="label"><%= f.label :password %></td>
-			<td class="textInputBox"><%= f.password_field :password, :size => 30 %></td>
+			<td><%= f.label :password %></td>
+			<td><%= f.password_field :password, :size => 30 %></td>
 		</tr>
 		<tr>
-			<td class="label"><%= f.label :password_confirmation %></td>
-			<td class="textInputBox"><%= f.password_field :password_confirmation	, :size => 30 %></td>
+			<td><%= f.label :password_confirmation, "Re-enter password" %></td>
+			<td><%= f.password_field :password_confirmation	, :size => 30 %></td>
 		</tr>
 		<tr>
 			<td class="centerIt" colspan="2"><%= image_submit_tag "../images/submitButtonBlueBig.png" %></td>
