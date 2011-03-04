@@ -1,7 +1,5 @@
-alert("the document is not ready");
 $(document).ready(function()
 				{	
-					alert("the document is ready"); 
 					$("input").click(function () 
 					{
 						var temp = $(this).attr('name');
