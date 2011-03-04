@@ -13,13 +13,20 @@
 			<td>Where:</td><td><%= @event.location %></td>
 		</tr>
 		<tr>
+			<td>Volunteers needed:</td><td><%= @event.volunteers_needed %></td>
+		</tr>
+		<tr>
 			<td>Description:</td><td><%= @event.description %></td>
 		</tr>
 		<tr>
-			<td colspan="2"><span id="smallerButton" class="smallButton">Add to My Events</span>
+			<td colspan="2">For more information contact <%= @event.organization %> at info@organization.com</td> <!-- field for email? -->
 		</tr>
 		<tr>
-			<td colspan="2">for more information contact <%= @event.organization %> at gogreen@natureconsortium.com</td> <!-- field for email? -->
+			<td colspan="2">
+				<a class="fancy_button" href="/events/new">
+				  <span style="background-color: #0071bc;">Add to my events</span>
+				</a>
+			</td>
 		</tr>
 	</table>
 </div>
