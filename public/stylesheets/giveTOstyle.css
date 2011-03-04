@@ -31,6 +31,11 @@ a:hover {
 	text-decoration: underline;
 }
 
+p {
+	margin: 0px;
+	padding: 10px;
+}
+
 h1 {
 	margin: 0px;
 	padding: 25px;
@@ -300,7 +305,8 @@ h3 {
 
 .insideDiv {
 	width: 675px;
-	margin: 20px auto 20px auto;
+	margin: 0px auto 0px auto;
+	padding: 20px;
 	height: 100%;
 	border-top: none;
 	height: 400px;
