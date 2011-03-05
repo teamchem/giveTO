@@ -1,14 +1,13 @@
 $(document).ready(function()
 				{	
-
 	
 					$(':input', '#filter_form')
 					 .not(':button, :submit, :reset, :hidden')
 					 .val('')
 					 .removeAttr('checked')
-					 .removeAttr('selected');
-
-
+					 .removeAttr('selected')
+					
+					 
 					$("input").click(function () 
 					{
 						var temp = $(this).attr('name');

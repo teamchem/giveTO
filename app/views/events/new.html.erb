@@ -1,6 +1,7 @@
 <p id="intro">
    <!-- giveTo is free, fun and easy. Sign up now to give back to your community.-->
 </p>
+
 <div id="mainForm">
 	<%= form_for(@event) do |f| %>
 		<h2>Register Volunteer Opportunity</h2>
@@ -26,6 +27,7 @@
 			<%= f.text_field :location, :size => 30 %>
 		</div>
 		<div>
+			<% Time.zone = 'Pacific Time (US & Canada)' %>
 			<%= f.label :start_time %>
 			<%= f.datetime_select :start_time, :size => 30 %>
 		</div>
@@ -66,3 +68,6 @@
 		</div>
 	<% end %>
 </div>
+<script type = "text/javascript">
+			document.getElementById("new_event").reset();
+		</script>
