@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
   attr_accessible :first_name, :last_name, :email, :phone, :password, :password_confirmation
   
+  has_many :volunteers, :foreign_key => "user_id", :dependent => :destroy
+  has_many :events, :through => :volunteers
+  
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :first_name,  :presence   => true,
@@ -49,6 +52,14 @@ class User < ActiveRecord::Base
   def self.authenticate_with_salt(id, cookie_salt)
     user = find_by_id(id)
     (user && user.salt == cookie_salt) ? user : nil
+  end
+  
+  def attending?(event)
+    volunteers.find_by_event_id(event)
+  end
+  
+  def attend!(event)
+    volunteers.create!(:event_id => event.id)
   end
   
   private

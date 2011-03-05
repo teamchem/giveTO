@@ -6,6 +6,9 @@ class CreateVolunteers < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :volunteers, :user_id
+    add_index :volunteers, :event_id
+    add_index :volunteers, [:user_id, :event_id], :unique => true
   end
 
   def self.down
