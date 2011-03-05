@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @title = @event.name
-    #@organization = User.find(params[@user.id])
   end
 
   def new

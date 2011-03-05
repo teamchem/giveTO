@@ -15,7 +15,7 @@
 				<td><a href="/events/show/<%= event.id %>"><%= event.name %></a></td>
 				<td><%= event.organization %></td>
 				<td><%= event.rso_type %></td>
-				<td><%= event.volunteers_needed %></td>
+				<td><%= event.volunteers_needed - event.attendees.count %></td>
 			</tr>
 		<% end %>
 	</table>	
