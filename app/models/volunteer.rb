@@ -11,7 +11,10 @@
 #
 
 class Volunteer < ActiveRecord::Base
-  attr_accessible :user_id, :event_id
+  attr_accessible :event_id
+  
+  belongs_to :user, :class_name => "User"
+  belongs_to :event, :class_name => "Event"
   
   validates :user_id,  :presence => true,
                        :length => { :minimum => 1 }

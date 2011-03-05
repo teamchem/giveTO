@@ -21,7 +21,23 @@ module SessionsHelper
     self.current_user = nil
   end
   
+  def current_user?(user)
+    user == current_user
+  end
+
+  def deny_access
+    redirect_to signin_path, :notice => "Please sign in to access this page."
+  end
+  
   private
+    def authenticate
+      deny_access unless signed_in?
+    end
+
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_path) unless current_user?(@user)
+    end
   
     def user_from_remember_token
       User.authenticate_with_salt(*remember_token)

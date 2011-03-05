@@ -1,0 +1,12 @@
+<% unless current_user?(@user) # might throw an error %>
+	<% if current_user.attending?(@event) # unattend %> 
+		<%= form_for current_user.volunteer.find_by_event_id(@event.id), :html => { :method => :delete } do |f| %>
+			<div class="actions"><%= f.submit "Unattend" %></div>
+		<% end %>
+	<% else # attend %>
+		<%= form_for current_user.volunteer.build(:event_id => @event.id) do |f| %>
+			<div><%= f.hidden_field :event_id %></div>
+			<div><%= f.submit "Attend" %></div>
+		<% end %>
+	<% end %>
+<% end %>

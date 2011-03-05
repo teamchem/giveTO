@@ -1,8 +1,14 @@
 Giveto::Application.routes.draw do
+  resources :users do
+    member do
+      get :volunteers, :events
+    end
+  end
 
   resources :users
   resource  :events
-  resource  :sessions, :only => [:new, :create, :destroy]
+  resources :volunteers, :only => [:create, :destroy]
+  resource  :sessions,   :only => [:new, :create, :destroy]
 
   
   match '/contact', :to => "pages#contact"

@@ -19,6 +19,9 @@
 class Event < ActiveRecord::Base
   attr_accessible :name, :organization, :location, :start_time, :end_time, :end_time, :volunteers_needed, :rso_type, :description
 
+  has_many :attendees, :foreign_key => "user_id", :class_name => "Volunteer", :dependent => :destroy
+  has_many :users, :through => :attendees
+
   def month
     return start_time.month
   end
