@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110228211247
+# Schema version: 20110307014445
 #
 # Table name: events
 #
@@ -14,6 +14,7 @@
 #  updated_at        :datetime
 #  rso_type          :string(255)
 #  description       :string(255)
+#  user_id           :integer
 #
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html

@@ -1,3 +1,4 @@
+<% @user ||= current_user %>
 <p id="intro">
    <!-- giveTo is free, fun and easy. Sign up now to give back to your community.-->
 </p>
@@ -62,6 +63,9 @@
 					                    ["Sciences", "Sciences"],
 					                    ["Special Interest", "Special"],
 					                    ["Sports", "Sports"]] %>
+		</div>
+		<div>
+			<%= hidden_field_tag 'event[user_id]', @user.id %>
 		</div>
 		<div>
 			<%= image_submit_tag "../images/submitButtonBlueBig.png" %>
