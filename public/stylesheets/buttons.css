@@ -84,3 +84,14 @@ a.fancy_button span:active, button.fancy_button span:active {
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, StartColorStr='#80969696', EndColorStr='#59000000'); 
   -webkit-background-clip: padding-box;
 }
+
+#sign_in_button {
+	background-image: url("../images/signInButtonFancy.png");
+	background-repeat: no-repeat;
+	width: 110px;
+	height: 40px;
+	border: 0px;
+	background-color: white;
+	cursor: pointer;
+	
+}
