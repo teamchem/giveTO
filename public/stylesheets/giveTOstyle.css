@@ -22,7 +22,7 @@ body img {
 a:active {
     border: none;
     text-decoration: none; 
-	color: #1B1464;
+	color: black;
 }
 
 a:visited {
@@ -137,6 +137,10 @@ form div{
     font-size: 12pt;    
 }
 
+#signInForm  div{
+	width: 225px;
+}
+
 #session_submit {
 
 }
@@ -214,9 +218,12 @@ form div{
 }
 
 .flash {
-	width: 820px;
-	background: #E6E6E6;
+	width: 500px;
+	background: white;
 	margin: auto;
+	border-top: 1px double red;
+	border-bottom: 1px double red;
+	border-width: 3px;
 }
 
 /*--- 2nd addition ---*/
