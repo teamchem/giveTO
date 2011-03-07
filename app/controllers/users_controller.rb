@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :except => [:show, :new, :create]
+  
   def index
     @users = User.paginate(:page => params[:page])
   end
   
   def show
-
     @user = User.find(params[:id])
     @title = "#{@user.first_name} #{@user.last_name}"
-    @events = @user.volunteers
   end
 
   def new

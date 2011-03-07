@@ -1,3 +1,4 @@
+<% @user = User.find(@event.user_id) %>
 <div class="insideDiv">
 	<h3 class="headerBar"><%= @event.name %></h3>
 	<table class="eventDisplay">
@@ -13,19 +14,28 @@
 			<td>Where:</td><td><%= @event.location %></td>
 		</tr>
 		<tr>
-			<td>Volunteers needed:</td><td><%= @event.volunteers_needed %></td>
+			<td>Volunteers needed:</td><td><%= [@event.volunteers_needed - @event.attendees.count,0].max %></td>
 		</tr>
 		<tr>
 			<td>Description:</td><td><%= @event.description %></td>
 		</tr>
 		<tr>
-			<td colspan="2">For more information contact <%= @event.organization %> at info@organization.com</td> <!-- field for email? -->
+			<td colspan="2">For more information contact <%= @event.organization %> at <%= @user.email %></td>
 		</tr>
 		<tr>
 			<td colspan="2">
+<!--
 				<a class="fancy_button" href="#">
 				  <span style="background-color: #0071bc;">Add to my events</span>
 				</a>
+				-->
+
+				<%= form_for current_user.volunteers.build(:user_id => @user.id) do |f| %>
+					<%= hidden_field_tag 'volunteer[event_id]', @event.id %>
+					<div>
+						<%= image_submit_tag "../images/submitButtonFancy.png", { :id => "search_button" } %>
+					</div>
+				<% end %>
 			</td>
 		</tr>
 	</table>

@@ -1,13 +1,16 @@
+<% @events ||= current_user.events %>
 <div class="insideDiv">
 	<h1>Hello, <%= @user.first_name %>!</h1>
 	<h3 class="headerBar">Your Opportunities:</h3>
 	
 	<% unless @events.empty? %>
-		<div class="tiles">
-		<%= @events.each do |e| %>
-			<a href="events/show/<%= e.id %>"><%= Date.strptime(str = e.start_time, fmt = '%m/%d/%Y') %>: <%= e.name %> </a>
+		<div class="tiles" style="width: 800px;">
+		<% @events.each do |e| %>
+			<a href="../events/show/<%= e.id %>"><%= e.start_time.strftime(fmt='%m/%d/%Y') %>: <%= e.name	 %> </a>
+			<div class="clear"></div>
 		<% end %>
 		</div>
+					<div class="clear"></div>
 		<span class="smallButton">Find More Opportunities</span>
 	<% end %>	
 </div>
