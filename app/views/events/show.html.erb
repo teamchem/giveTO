@@ -29,12 +29,13 @@
 				  <span style="background-color: #0071bc;">Add to my events</span>
 				</a>
 				-->
-
-				<%= form_for current_user.volunteers.build(:user_id => @user.id) do |f| %>
-					<%= hidden_field_tag 'volunteer[event_id]', @event.id %>
-					<div>
-						<%= image_submit_tag "../images/submitButtonFancy.png", { :id => "search_button" } %>
-					</div>
+				<% if signed_in? %>
+					<%= form_for current_user.volunteers.build(:user_id => @user.id) do |f| %>
+						<%= hidden_field_tag 'volunteer[event_id]', @event.id %>
+						<div>
+							<%= image_submit_tag "../images/submitButtonFancy.png", { :id => "search_button" } %>
+						</div>
+					<% end %>
 				<% end %>
 			</td>
 		</tr>
