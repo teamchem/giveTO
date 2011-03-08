@@ -6,7 +6,7 @@ Giveto::Application.routes.draw do
   end
 
   resources :users
-  resource  :events
+  resource  :events 
   resources :volunteers, :only => [:create, :destroy]
   resource  :sessions,   :only => [:new, :create, :destroy]
 
