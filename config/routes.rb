@@ -28,5 +28,5 @@ Giveto::Application.routes.draw do
   root :to => 'pages#home'
   
   # Catch-all 404 redirect
-  match '*a', :to => 'error#routing'
+  #match '*a', :to => 'error#routing'
 end
