@@ -31,7 +31,10 @@
 			<td><%= f.password_field :password_confirmation	, :size => 30 %></td>
 		</tr>
 		<tr>
-			<td class="centerIt" colspan="2"><%= image_submit_tag "../images/submitButtonFancy.png" %></td>
+			<td class="centerIt" colspan="2">
+				<% #image_submit_tag "../images/submitButtonFancy.png" %>
+				<%= f.submit "", { :id => "sign_up_button" } %>
+			</td>
 		</tr>
 		<% end %>
 		</table>
