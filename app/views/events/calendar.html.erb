@@ -1,9 +1,11 @@
 <h1>Volunteer Events for <%= "#{@date.strftime('%B')} #{@date.year}" %></h1>
 <span style="float: right; padding-top: 5px; padding-bottom: 5px; margin-right: 50px" id="display_nav"><a href="/events/all">List</a> | Calendar</span>
 <div class="clear"></div>
+<% if signed_in? %>
 <a class="fancy_button" href="/events/new" style="float: right; margin-right: 30px;">
   <span style="background-color: #0071bc;">Create an event</span>
 </a>
+<% end %>
 <div class="clear"></div>
 <table cellspacing="0" id="eventsCal">
 	<thead>

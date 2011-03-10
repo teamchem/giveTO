@@ -6,6 +6,9 @@ class UsersController < ApplicationController
   end
   
   def show
+    if not signed_in?
+      redirect_to signin_path
+    end
     @user = User.find(params[:id])
     @title = "#{@user.first_name} #{@user.last_name}"
   end

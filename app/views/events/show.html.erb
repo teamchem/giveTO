@@ -33,7 +33,7 @@
 					<%= form_for current_user.volunteers.build(:user_id => @user.id) do |f| %>
 						<%= hidden_field_tag 'volunteer[event_id]', @event.id %>
 						<div>
-							<%= image_submit_tag "../images/submitButtonFancy.png", { :id => "search_button" } %>
+							<%= image_submit_tag "../images/signUpButtonFancy.png", { :id => "search_button" } %>
 						</div>
 					<% end %>
 				<% end %>
