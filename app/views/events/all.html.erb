@@ -10,7 +10,7 @@
 	<% end %>
 	<table class="eventDisplay" id="allOppTable">
 		<tr>
-			<th>Date</th><th>Name</th><th>Host</th><th>Category</th><th>Volunteers needed</th><th>user_id</th>
+			<th>Date</th><th>Name</th><th>Host</th><th>Category</th><th>Volunteers needed</th>
 		</tr>
 		<% @events.each do |event| %>
 			<tr>
@@ -19,7 +19,6 @@
 				<td><%= event.organization %></td>
 				<td><%= event.rso_type %></td>
 				<td><%= [event.volunteers_needed,0].max %></td>
-				<td><%= event.user_id %>
 			</tr>
 		<% end %>
 	</table>	

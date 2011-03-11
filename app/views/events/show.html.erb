@@ -19,18 +19,15 @@
 		<tr>
 			<td>Description:</td><td><%= @event.description %></td>
 		</tr>
+		<% if not @user.nil? %>
 		<tr>
 			<td colspan="2">For more information contact <%= @event.organization %> at <%= @user.email %></td>
 		</tr>
+		<% end %>
 		<tr>
 			<td colspan="2">
-<!--
-				<a class="fancy_button" href="#">
-				  <span style="background-color: #0071bc;">Add to my events</span>
-				</a>
-				-->
-				<% if signed_in? %>
-					<%= form_for current_user.volunteers.build(:user_id => @user.id) do |f| %>
+				<% if signed_in?%>
+					<%= form_for current_user.volunteers.build(:user_id => current_user.id) do |f| %>
 						<%= hidden_field_tag 'volunteer[event_id]', @event.id %>
 						<div>
 							<%= image_submit_tag "../images/signUpButtonFancy.png", { :id => "search_button" } %>
