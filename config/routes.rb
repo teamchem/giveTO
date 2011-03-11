@@ -18,6 +18,7 @@ Giveto::Application.routes.draw do
   match '/signup', :to => 'users#create'
   match '/signin', :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
+  #match '/profile', :to => 'users#show'
   
   match '/events/show/:id', :to => 'events#show'
   match '/events/new', :to => 'events#new'

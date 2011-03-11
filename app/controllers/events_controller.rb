@@ -5,8 +5,12 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new
-    @title = "New event"
+    if signed_in?
+      @event = Event.new
+      @title = "New event"
+    else
+      redirect_to "/signin"
+    end
   end
   
   def create
