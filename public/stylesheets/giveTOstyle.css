@@ -161,7 +161,7 @@ form div{
 	background-repeat: repeat-y;
   margin: 0px auto 0px auto;
   text-align: center; /*for ie*/
-  padding: 0px;
+  padding: 0px 0px 20px 0px;
 	min-height: 400px;
 }
 
