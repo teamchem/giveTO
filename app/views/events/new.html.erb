@@ -2,7 +2,6 @@
 <p id="intro">
    <!-- giveTo is free, fun and easy. Sign up now to give back to your community.-->
 </p>
-
 <div id="mainForm">
 	<%= form_for(@event) do |f| %>
 		<h2>Register Volunteer Opportunity</h2>
@@ -65,7 +64,7 @@
 					                    ["Sports", "Sports"]] %>
 		</div>
 		<div>
-			<%= hidden_field_tag 'event[user_id]', @user.id %>
+			<%= f.hidden_field :user_id, { :value => @user.id } %>
 		</div>
 		<div class="centerIt">
 			<%= image_submit_tag "../images/submitButtonFancy.png", { :id => "search_button" } %>

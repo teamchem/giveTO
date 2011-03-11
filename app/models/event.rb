@@ -18,7 +18,8 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :name, :organization, :location, :start_time, :end_time, :end_time, :volunteers_needed, :rso_type, :description
+  attr_accessible :name, :organization, :location, :start_time, 
+                  :end_time, :end_time, :volunteers_needed, :rso_type, :description, :user_id
 
   has_many :attendees, :foreign_key => "user_id", :class_name => "Volunteer", :dependent => :destroy
   has_many :users, :through => :attendees
