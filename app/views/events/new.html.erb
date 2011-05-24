@@ -15,36 +15,51 @@
 		</div>
 		<div>
 			<%= f.label :organization %>
+			<br />
 			<%= f.text_field :organization, :size => 30 %>
 		</div>
+		<br />
 		<!--<h2>Information About Volunteer Opportunity</h2>-->
 		<div>
 			<%= f.label :name %>
+			<br />
 			<%= f.text_field :name, :size => 30 %>
 		</div>
+		<br />
 		<div>
 			<%= f.label :location %>
+			<br />
 			<%= f.text_field :location, :size => 30 %>
 		</div>
+		<br />
 		<div>
 			<% Time.zone = 'Pacific Time (US & Canada)' %>
 			<%= f.label :start_time %>
+			<br />
 			<%= f.datetime_select :start_time, :size => 30 %>
 		</div>
+		<br />
 		<div>
 			<%= f.label :end_time %>
+			<br />
 			<%= f.datetime_select :end_time, :size => 30 %>
 		</div>
+		<br />
 		<div>
 			<%= f.label :volunteers_needed %>
+			<br />
 			<%= f.text_field :volunteers_needed, :size => 30 %>
 		</div>
+		<br />
 		<div>
 			<%= f.label :description %>
+			<br />
 			<%= f.text_area :description, :size => '30x10' %>
 		</div>
+		<br />
 		<div>
 			<%= f.label :rso_type %>
+			<br />
 			<%= f.select :rso_type,[["Academic", "Academic"],
 															["Business", "Business"],
 					                    ["Cultural/International", "Cultural"],
@@ -63,6 +78,7 @@
 					                    ["Special Interest", "Special"],
 					                    ["Sports", "Sports"]] %>
 		</div>
+		<br />
 		<div>
 			<%= f.hidden_field :user_id, { :value => @user.id } %>
 		</div>
